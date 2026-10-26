@@ -101,7 +101,7 @@ Ahí aparece la IP `192.168.56.101` con la MAC del cliente (`08:00:27:d2:18:a6`)
 
 - **El servicio no arranca:** casi siempre es un `;` o una `}` que falta en `dhcpd.conf`. `sudo dhcpd -t -cf /etc/dhcp/dhcpd.conf` dice la línea exacta.
 - **El cliente no recibe IP:** comprobar que el cliente y el servidor están en la misma red interna (`redlab`) y que no hay otro DHCP en esa red.
-- **El servidor se pide IP a sí mismo:** era nuestro caso antes de poner `dhcp4: false` en netplan (ver [Parte 5](../parte5-entorno-laboratorio/README.md)).
+- **El servidor se pide IP a sí mismo:** era nuestro caso antes de poner `dhcp4: false` en netplan (ver [Parte 5](../parte5-entorno-red-laboratorio/README.md)).
 
 ---
 

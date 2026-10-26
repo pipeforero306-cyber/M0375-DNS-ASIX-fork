@@ -4,7 +4,7 @@
 
 Este repositorio recoge la actividad completa sobre DNS. Las partes 1 a 4 estudian el DNS desde fuera: quién lo gestiona, cómo lo usa el sistema operativo, cómo se diagnostica con `dig` y cómo se ve en Wireshark. Las partes 5 a 8 son el laboratorio práctico, donde montamos nuestra propia infraestructura en VirtualBox: servidor DNS maestro y esclavo con BIND9, servidor DHCP y firma de la zona con DNSSEC.
 
-> **Observación sobre el DHCP:** el profesor pidió hacer el servidor DHCP con **Kea**, pero cuando nos lo indicó ya habíamos empezado la actividad con `isc-dhcp-server`, el DHCP de siempre. Todo el laboratorio está hecho y probado con `isc-dhcp-server`, y tenemos previsto migrarlo a Kea con la misma configuración de red. Más detalles en la [Parte 7](parte7-servidor-dhcp/README.md).
+> **Observación sobre el DHCP:** el profesor pidió hacer el servidor DHCP con **Kea**, pero cuando nos lo indicó ya habíamos empezado la actividad con `isc-dhcp-server`, el DHCP de siempre. Todo el laboratorio está hecho y probado con `isc-dhcp-server`, y tenemos previsto migrarlo a Kea con la misma configuración de red. Más detalles en la [Parte 7](parte7-servidor-dhcp-isc/README.md).
 
 ---
 
@@ -13,19 +13,19 @@ Este repositorio recoge la actividad completa sobre DNS. Las partes 1 a 4 estudi
 ```
 M0375-DNS-ASIX/
 ├── README.md                              (este archivo)
-├── parte1-ecosistema-dns/
+├── parte1-ecosistema-dns-osint/
 │   └── README.md                          Parte 1: OSINT y Web [2p]
-├── parte2-configuracion-cache/
+├── parte2-configuracion-dns-y-cache/
 │   └── README.md                          Parte 2: Configuración y Caché [2p]
-├── parte3-troubleshooting-dig/
+├── parte3-troubleshooting-dig-cli/
 │   └── README.md                          Parte 3: DIG y CLI [3p]
-├── parte4-analisis-wireshark/
+├── parte4-analisis-trafico-wireshark/
 │   └── README.md                          Parte 4: Wireshark [3p]
-├── parte5-entorno-laboratorio/
+├── parte5-entorno-red-laboratorio/
 │   └── README.md                          Parte 5: VMs, red interna y netplan
-├── parte6-dns-maestro-esclavo/
+├── parte6-bind9-dns-maestro-esclavo/
 │   └── README.md                          Parte 6: BIND9 maestro y esclavo
-├── parte7-servidor-dhcp/
+├── parte7-servidor-dhcp-isc/
 │   └── README.md                          Parte 7: Servidor DHCP
 ├── parte8-dnssec-alta-disponibilidad/
 │   └── README.md                          Parte 8: DNSSEC y alta disponibilidad
@@ -44,13 +44,13 @@ M0375-DNS-ASIX/
 
 | Sección | Tema |
 |---|---|
-| [Parte 1](parte1-ecosistema-dns/README.md) | El ecosistema DNS: jerarquía, OSINT, Whois y benchmark |
-| [Parte 2](parte2-configuracion-cache/README.md) | Cambio de servidores DNS y caché del sistema |
-| [Parte 3](parte3-troubleshooting-dig/README.md) | Troubleshooting con `dig`: registros A, MX, NS, SOA, TTL y `+trace` |
-| [Parte 4](parte4-analisis-wireshark/README.md) | Análisis del tráfico DNS con Wireshark |
-| [Parte 5](parte5-entorno-laboratorio/README.md) | Entorno del laboratorio: topología, máquinas virtuales, direccionamiento y netplan |
-| [Parte 6](parte6-dns-maestro-esclavo/README.md) | BIND9: zonas directa e inversa en el maestro, transferencia al esclavo y resolución desde el cliente |
-| [Parte 7](parte7-servidor-dhcp/README.md) | Servidor DHCP (`isc-dhcp-server`) repartiendo IP, dominio y los dos DNS |
+| [Parte 1](parte1-ecosistema-dns-osint/README.md) | El ecosistema DNS: jerarquía, OSINT, Whois y benchmark |
+| [Parte 2](parte2-configuracion-dns-y-cache/README.md) | Cambio de servidores DNS y caché del sistema |
+| [Parte 3](parte3-troubleshooting-dig-cli/README.md) | Troubleshooting con `dig`: registros A, MX, NS, SOA, TTL y `+trace` |
+| [Parte 4](parte4-analisis-trafico-wireshark/README.md) | Análisis del tráfico DNS con Wireshark |
+| [Parte 5](parte5-entorno-red-laboratorio/README.md) | Entorno del laboratorio: topología, máquinas virtuales, direccionamiento y netplan |
+| [Parte 6](parte6-bind9-dns-maestro-esclavo/README.md) | BIND9: zonas directa e inversa en el maestro, transferencia al esclavo y resolución desde el cliente |
+| [Parte 7](parte7-servidor-dhcp-isc/README.md) | Servidor DHCP (`isc-dhcp-server`) repartiendo IP, dominio y los dos DNS |
 | [Parte 8](parte8-dnssec-alta-disponibilidad/README.md) | Firma de `lake.local` con DNSSEC y prueba con el maestro apagado |
 
 ---
@@ -102,9 +102,9 @@ M0375-DNS-ASIX/
 
 **Correcciones aplicadas durante el laboratorio:**
 
-1. Netplan del maestro: `dhcp4: false` en la interfaz interna, para que el servidor no se pida IP a sí mismo ([Parte 5](parte5-entorno-laboratorio/README.md)).
-2. Opciones del esclavo igualadas con las del maestro ([Parte 6](parte6-dns-maestro-esclavo/README.md)).
-3. El DHCP reparte los dos DNS, no solo el del maestro ([Parte 7](parte7-servidor-dhcp/README.md)).
+1. Netplan del maestro: `dhcp4: false` en la interfaz interna, para que el servidor no se pida IP a sí mismo ([Parte 5](parte5-entorno-red-laboratorio/README.md)).
+2. Opciones del esclavo igualadas con las del maestro ([Parte 6](parte6-bind9-dns-maestro-esclavo/README.md)).
+3. El DHCP reparte los dos DNS, no solo el del maestro ([Parte 7](parte7-servidor-dhcp-isc/README.md)).
 
 ---
 

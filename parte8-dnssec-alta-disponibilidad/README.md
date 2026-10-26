@@ -78,7 +78,7 @@ Resultado:
 
 **Captura:** `capturas/parte8/alta-disponibilidad.png`
 
-Con esto se ve que el esclavo tiene una copia completa de la zona, firmas incluidas. Como el DHCP reparte los dos DNS (ver [Parte 7](../parte7-servidor-dhcp/README.md)), los clientes siguen resolviendo nombres aunque el maestro no esté.
+Con esto se ve que el esclavo tiene una copia completa de la zona, firmas incluidas. Como el DHCP reparte los dos DNS (ver [Parte 7](../parte7-servidor-dhcp-isc/README.md)), los clientes siguen resolviendo nombres aunque el maestro no esté.
 
 ---
 
